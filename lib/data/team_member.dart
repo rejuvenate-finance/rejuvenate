@@ -3,7 +3,7 @@ import 'dart:convert';
 const teamMembers = <TeamMember>[
   TeamMember(
     name: "Sarp",
-    role: "CEO",
+    role: "Co-Founder & CEO",
     linkedIn: "sarpcetinyurt",
     twitter: "Deuxmachina007",
     imagePath: "assets/png/person_sarp.png",
@@ -13,7 +13,7 @@ const teamMembers = <TeamMember>[
   ),
   TeamMember(
     name: "Kevin",
-    role: "Development",
+    role: "Co-Founder & CTO",
     twitter: "i_like_cubes",
     linkedIn: "kevin-scheeren-622b191ba",
     github: "kevinscheeren",
@@ -24,7 +24,7 @@ const teamMembers = <TeamMember>[
   ),
   TeamMember(
     name: "Kazi",
-    role: "Marketing",
+    role: "Co-Founder & CMO",
     twitter: "TheCryptoKazi",
     linkedIn: "isa-kazi-751a87229",
     imagePath: "assets/png/person_isa.png",
@@ -34,7 +34,7 @@ const teamMembers = <TeamMember>[
   ),
   TeamMember(
     name: "Rey",
-    role: "Advisor",
+    role: "Strategic Advisor",
     twitter: "King_Diego21",
     imagePath: "assets/png/person_rey.png",
     linkedIn: "rey-santiago-233744150",
@@ -43,7 +43,7 @@ const teamMembers = <TeamMember>[
   ),
   TeamMember(
     name: "Chris",
-    role: "Advisor",
+    role: "Marketing Advisor",
     imagePath: "assets/png/person_chris.png",
     description:
         "Hi, I am Chris Warburton. I own multiple businesses and specialise in marketing and scaling of businesses. I regard myself as an entrepreneur and I’m hugely excited to be able to bring my expertise & skills that I’ve learnt and evolved in business, to Rejuvenate Finance.",

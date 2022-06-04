@@ -50,6 +50,10 @@ class QuickLinks extends StatelessWidget {
                 url: 'https://discord.gg/9Ey8T9M5',
               ),
               _QuickLinksItem(
+                icon: LineIcons.medium,
+                url: 'https://medium.com/@rejuvenate.finance',
+              ),
+              _QuickLinksItem(
                 icon: LineIcons.github,
                 url: 'https://github.com/rejuvenate-finance',
               ),
