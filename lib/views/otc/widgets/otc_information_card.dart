@@ -27,7 +27,7 @@ class OTCInformationCard extends StatelessWidget {
               wrapWords: false,
             ),
             AutoSizeText(
-              "If you are whitlesited \$RJV tokens can be bought for 0.9 \$BUSD per Token. The \$BUSD spent is partially distributed between the team and the treasury. You can only make a single purchase afterwards your whitelist-status expires. Whitelist spots can be requested by contacting the team.",
+              "If you are whitelisted \$RJV tokens can be bought for 0.9 \$BUSD per Token. The \$BUSD spent is partially distributed between the team and the treasury. You can only make a single purchase afterwards your whitelist-status expires. Whitelist spots can be requested by contacting the team.",
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: AppTheme.textColor1,
                   ),
