@@ -4,6 +4,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:rejuvenate/app/theme.dart';
 import 'package:rejuvenate/controllers/team_detail_controller.dart';
 import 'package:rejuvenate/data/team_member.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -20,7 +21,7 @@ class TeamDetailView extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppTheme.dark.primaryColor,
         elevation: 0.0,
         title: Text(teamMember.name),
         centerTitle: true,

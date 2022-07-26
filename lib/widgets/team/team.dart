@@ -94,136 +94,147 @@ class _TeamCard extends StatelessWidget {
       width: 350.0,
       height: 200.0,
       child: Card(
+        color: Colors.black.withOpacity(0.05),
         elevation: 0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Flexible(
-              child: teamMember.imagePath != null
-                  ? InkWell(
-                      onTap: () {
-                        AppRouter.key.currentState?.push(
-                          MaterialPageRoute(
-                            builder: (context) => TeamDetailView(
-                              teamMember: teamMember,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Flexible(
+                child: teamMember.imagePath != null
+                    ? InkWell(
+                        onTap: () {
+                          AppRouter.key.currentState?.push(
+                            MaterialPageRoute(
+                              builder: (context) => TeamDetailView(
+                                teamMember: teamMember,
+                              ),
+                              settings:
+                                  ModalRoute.of(context)?.settings.copyWith(
+                                        name:
+                                            '/team/${teamMember.name.toLowerCase()}',
+                                      ),
                             ),
-                            settings: ModalRoute.of(context)?.settings.copyWith(
-                                  name:
-                                      '/team/${teamMember.name.toLowerCase()}',
-                                ),
+                          );
+                        },
+                        child: Container(
+                          width: 100.0,
+                          height: 100.0,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                teamMember.imagePath!,
+                              ),
+                              fit: BoxFit.cover,
+                            ),
                           ),
-                        );
-                      },
-                      child: Container(
-                        width: 100.0,
-                        height: 100.0,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                              teamMember.imagePath!,
+                        ),
+                      )
+                    : InkWell(
+                        onTap: () {
+                          AppRouter.key.currentState?.push(
+                            MaterialPageRoute(
+                              builder: (context) => TeamDetailView(
+                                teamMember: teamMember,
+                              ),
+                              settings:
+                                  ModalRoute.of(context)?.settings.copyWith(
+                                        name:
+                                            '/team/${teamMember.name.toLowerCase()}',
+                                      ),
                             ),
-                            fit: BoxFit.cover,
+                          );
+                        },
+                        child: Container(
+                          width: 100.0,
+                          height: 100.0,
+                          color: Theme.of(context).colorScheme.primary,
+                          child: const Icon(
+                            Icons.person,
+                            size: 80.0,
                           ),
                         ),
                       ),
-                    )
-                  : InkWell(
-                      onTap: () {
-                        AppRouter.key.currentState?.push(
-                          MaterialPageRoute(
-                            builder: (context) => TeamDetailView(
-                              teamMember: teamMember,
-                            ),
-                            settings: ModalRoute.of(context)?.settings.copyWith(
-                                  name:
-                                      '/team/${teamMember.name.toLowerCase()}',
-                                ),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        width: 100.0,
-                        height: 100.0,
-                        color: Theme.of(context).colorScheme.primary,
-                        child: const Icon(
-                          Icons.person,
-                          size: 80.0,
-                        ),
-                      ),
-                    ),
-            ),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    teamMember.name,
-                  ),
-                  const SizedBox(
-                    height: 4.0,
-                  ),
-                  Text(
-                    teamMember.role,
-                    style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 16.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      if (teamMember.twitter != null)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 8.0,
-                          ),
-                          child: IconButton(
-                            icon: const Icon(LineIcons.twitter),
-                            iconSize: 32.0,
-                            onPressed: () {
-                              launchUrlString(
-                                "https://twitter.com/${teamMember.twitter}",
-                              );
-                            },
-                          ),
+                      Text(
+                        teamMember.name,
+                      ),
+                      const SizedBox(
+                        height: 4.0,
+                      ),
+                      Text(
+                        teamMember.role,
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                         ),
-                      if (teamMember.linkedIn != null)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 8.0,
-                          ),
-                          child: IconButton(
-                            icon: const Icon(LineIcons.linkedin),
-                            iconSize: 32.0,
-                            onPressed: () {
-                              launchUrlString(
-                                "https://linkedin.com/in/${teamMember.linkedIn}",
-                              );
-                            },
-                          ),
-                        ),
-                      if (teamMember.github != null)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 8.0,
-                          ),
-                          child: IconButton(
-                            icon: const Icon(LineIcons.github),
-                            iconSize: 32.0,
-                            onPressed: () {
-                              launchUrlString(
-                                "https://github.com/${teamMember.github}",
-                              );
-                            },
-                          ),
-                        ),
+                      ),
                     ],
                   ),
-                ],
+                ),
               ),
-            ),
-          ],
+              Flexible(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    if (teamMember.twitter != null)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 8.0,
+                        ),
+                        child: IconButton(
+                          icon: const Icon(LineIcons.twitter),
+                          iconSize: 32.0,
+                          onPressed: () {
+                            launchUrlString(
+                              "https://twitter.com/${teamMember.twitter}",
+                            );
+                          },
+                        ),
+                      ),
+                    if (teamMember.linkedIn != null)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 8.0,
+                        ),
+                        child: IconButton(
+                          icon: const Icon(LineIcons.linkedin),
+                          iconSize: 32.0,
+                          onPressed: () {
+                            launchUrlString(
+                              "https://linkedin.com/in/${teamMember.linkedIn}",
+                            );
+                          },
+                        ),
+                      ),
+                    if (teamMember.github != null)
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 8.0,
+                        ),
+                        child: IconButton(
+                          icon: const Icon(LineIcons.github),
+                          iconSize: 32.0,
+                          onPressed: () {
+                            launchUrlString(
+                              "https://github.com/${teamMember.github}",
+                            );
+                          },
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

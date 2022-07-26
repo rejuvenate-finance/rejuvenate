@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:rejuvenate/app/routes.dart';
+import 'package:rejuvenate/app/theme.dart';
 
 class NavigationMenuBody extends StatelessWidget {
   const NavigationMenuBody({Key? key}) : super(key: key);
@@ -8,41 +9,37 @@ class NavigationMenuBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        SizedBox(
+      children: [
+        const SizedBox(
           height: 16.0,
         ),
-        _NavigationMenuItem(
+        const _NavigationMenuItem(
           route: AppRoutes.home,
           icon: LineIcons.arrowLeft,
           title: "GO BACK",
         ),
-        Divider(),
-        _NavigationMenuItem(
+        Divider(
+          color: AppTheme.dark.colorScheme.onPrimary,
+        ),
+        const _NavigationMenuItem(
           route: AppRoutes.dashboard,
           icon: Icons.dashboard,
           title: "Dashboard",
         ),
-        _NavigationMenuItem(
+        const _NavigationMenuItem(
           route: AppRoutes.staking,
           icon: LineIcons.layerGroup,
           title: "Staking",
         ),
-        _NavigationMenuItem(
+        const _NavigationMenuItem(
           route: AppRoutes.farms,
           icon: LineIcons.chalkboard,
           title: "Farms",
         ),
-        _NavigationMenuItem(
+        const _NavigationMenuItem(
           route: AppRoutes.rugRecovery,
           icon: LineIcons.handHoldingUsDollar,
           title: "Rug Recovery",
-        ),
-        Divider(),
-        _NavigationMenuItem(
-          route: AppRoutes.otc,
-          icon: LineIcons.moneyCheck,
-          title: "OTC Buys",
         ),
       ],
     );
@@ -63,7 +60,7 @@ class _NavigationMenuItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).primaryColor;
+    final color = AppTheme.dark.colorScheme.onPrimary;
     final isSelected = ModalRoute.of(context)!.settings.name == route;
 
     return Container(

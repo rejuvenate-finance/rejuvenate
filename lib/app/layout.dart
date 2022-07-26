@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:rejuvenate/app/theme.dart';
 import 'package:rejuvenate/widgets/connect_button.dart/connect_button.dart';
 import 'package:rejuvenate/widgets/rotated_navigation_bar/rotated_navigation_bar.dart';
 import 'package:rejuvenate/widgets/navigation_menu/navigation_menu.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
+import '../widgets/navigation_bar/navigation_bar.dart';
 
 class AppLayout extends StatelessWidget {
   const AppLayout({Key? key, required this.title, required this.child})
@@ -16,7 +19,7 @@ class AppLayout extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppTheme.dark.primaryColor,
         elevation: 0,
         centerTitle: true,
         actions: const [
@@ -30,7 +33,7 @@ class AppLayout extends StatelessWidget {
         ],
       ),
       drawer: const NavigationMenu(),
-      extendBodyBehindAppBar: true,
+      extendBodyBehindAppBar: false,
       body: child,
     );
   }
@@ -44,20 +47,22 @@ class HomeLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
+        backgroundColor: AppTheme.dark.primaryColor,
+      ),
+      body: Stack(
+        children: [
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: child,
+          ),
+        ],
       ),
       endDrawer: const Drawer(
-        width: 100.0,
-        backgroundColor: Colors.transparent,
+        width: 300.0,
         child: RotatedNavigationBar(),
-      ),
-      extendBodyBehindAppBar: true,
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: child,
       ),
     );
   }

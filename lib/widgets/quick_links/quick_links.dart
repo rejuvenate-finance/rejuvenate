@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:rejuvenate/app/theme.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 class QuickLinks extends StatelessWidget {
@@ -19,17 +20,17 @@ class QuickLinks extends StatelessWidget {
             },
             icon: Icon(
               LineIcons.alternateExternalLink,
-              color: Theme.of(context).colorScheme.onPrimary,
+              color: AppTheme.dark.colorScheme.onPrimary,
             ),
             label: Text(
               "Documentation",
               style: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimary,
+                color: AppTheme.dark.colorScheme.onPrimary,
               ),
             ),
           ),
         ),
-        const Divider(),
+        Divider(color: AppTheme.dark.colorScheme.onPrimary),
         Padding(
           padding: const EdgeInsets.only(bottom: 32.0),
           child: Row(
@@ -82,7 +83,7 @@ class _QuickLinksItem extends StatelessWidget {
       iconSize: 32.0,
       icon: Icon(
         icon,
-        color: Theme.of(context).colorScheme.onPrimary,
+        color: AppTheme.dark.colorScheme.onPrimary,
       ),
       hoverColor: Colors.transparent,
     );

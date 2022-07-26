@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:rejuvenate/app/theme.dart';
 import 'package:rejuvenate/widgets/connect_button.dart/connect_button_controller.dart';
 
 class ConnectButton extends ConsumerWidget {
@@ -9,6 +10,9 @@ class ConnectButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.watch(ConnectButtonController.instance);
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: AppTheme.dark.colorScheme.primary,
+      ),
       onPressed: controller.onPressed,
       child: Text(
         controller.buttonText,

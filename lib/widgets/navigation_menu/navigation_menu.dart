@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rejuvenate/app/theme.dart';
 import 'package:rejuvenate/widgets/navigation_menu/navigation_menu_body.dart';
 import 'package:rejuvenate/widgets/quick_links/quick_links.dart';
 
@@ -8,7 +9,7 @@ class NavigationMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: AppTheme.dark.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: 20.0,
