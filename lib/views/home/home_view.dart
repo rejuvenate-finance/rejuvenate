@@ -7,6 +7,7 @@ import 'package:rejuvenate/app/routes.dart';
 import 'package:rejuvenate/app/theme.dart';
 import 'package:rejuvenate/widgets/footer/footer.dart';
 import 'package:rejuvenate/widgets/home_text/home_text.dart';
+import 'package:rejuvenate/widgets/image_section/image_section.dart';
 import 'package:rejuvenate/widgets/quick_links/quick_links.dart';
 import 'package:rejuvenate/widgets/section/section.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -133,6 +134,11 @@ class HomeView extends HookConsumerWidget {
               launchUrlString("https://docs.rejuvenate.finance");
             },
             flipped: true,
+          ),
+          const ImageSection(
+            title: "Partners",
+            description:
+                "Thanks to our Partners and Supporters, who help us throughout our journey as a small team! Without them this project wouldn't be possible!",
           ),
           const Footer(),
         ],

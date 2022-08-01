@@ -45,6 +45,7 @@ dependencies:
   google_fonts: ^3.0.1
   get_it: ^7.2.0
   flutter_web3: ^2.1.9
+  carousel_slider: ^4.1.1
 
 dev_dependencies:
   flutter_test:
