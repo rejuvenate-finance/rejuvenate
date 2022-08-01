@@ -118,7 +118,7 @@ class HomeView extends HookConsumerWidget {
             description:
                 "Building the Ecosystem which brings new life to DeFi. For more security, safety and transparency!",
             asset: LineIcons.enviraGallery,
-            buttonText: "Whitepaper",
+            buttonText: "Litepaper",
             onPressed: () {
               launchUrlString("https://docs.rejuvenate.finance");
             },
@@ -130,7 +130,7 @@ class HomeView extends HookConsumerWidget {
             asset: LineIcons.userShield,
             buttonText: "Learn More",
             onPressed: () {
-              AppRouter.key.currentState?.pushNamed(AppRoutes.services);
+              launchUrlString("https://docs.rejuvenate.finance");
             },
             flipped: true,
           ),
@@ -138,9 +138,15 @@ class HomeView extends HookConsumerWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton.extended(
-        label: const Text("APP"),
+        label: const Text(
+          "APP",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         icon: const Icon(
           Icons.open_in_new,
+          color: Colors.white,
         ),
         backgroundColor: Colors.black,
         onPressed: () =>

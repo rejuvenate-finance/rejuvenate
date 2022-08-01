@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:rejuvenate/controllers/otc_controller.dart';
 import 'package:rejuvenate/widgets/amount_text_field/amount_text_field.dart';
 
 class UnstakeCard extends StatefulHookConsumerWidget {
@@ -14,13 +13,11 @@ class UnstakeCard extends StatefulHookConsumerWidget {
 class _UnstakeCardState extends ConsumerState<UnstakeCard> {
   @override
   void initState() {
-    ref.read(OTCController.instance).init();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final controller = ref.watch(OTCController.instance);
     final textControllerBUSD = useTextEditingController(
       text: "0.9",
     );
@@ -31,9 +28,6 @@ class _UnstakeCardState extends ConsumerState<UnstakeCard> {
     final buttonStyle = ElevatedButton.styleFrom(
       minimumSize: const Size(200.0, 50.0),
     );
-
-    final needsApproval =
-        controller.allowance < controller.toWei(textControllerBUSD.text);
 
     return Card(
       elevation: 20.0,
@@ -52,7 +46,7 @@ class _UnstakeCardState extends ConsumerState<UnstakeCard> {
                 controller: textControllerRJV,
                 hint: "100",
                 label: "Unstake sRJV",
-                icon: const Icon(Icons.shopping_bag_outlined),
+                icon: const Icon(Icons.arrow_upward),
                 formatFunction: (oldValue, newValue) {
                   try {
                     if (newValue.text.isNotEmpty) {
@@ -63,7 +57,6 @@ class _UnstakeCardState extends ConsumerState<UnstakeCard> {
                     } else {
                       textControllerBUSD.value = TextEditingValue.empty;
                     }
-                    controller.refresh();
                     return newValue;
                   } catch (_) {
                     textControllerBUSD.value = TextEditingValue.empty;
@@ -82,18 +75,14 @@ class _UnstakeCardState extends ConsumerState<UnstakeCard> {
                   children: [
                     ElevatedButton(
                       style: buttonStyle,
-                      onPressed: needsApproval
-                          ? () => controller.approve(textControllerBUSD.text)
-                          : null,
+                      onPressed: null,
                       child: const Text(
                         "Approve sRJV",
                       ),
                     ),
                     ElevatedButton(
                       style: buttonStyle,
-                      onPressed: !needsApproval
-                          ? () => controller.buy(textControllerBUSD.text)
-                          : null,
+                      onPressed: null,
                       child: const Text(
                         "Unstake",
                       ),
