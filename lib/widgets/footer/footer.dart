@@ -8,7 +8,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).cardColor,
+      color: AppTheme.dark.colorScheme.primary,
       height: 200.0,
       width: MediaQuery.of(context).size.width,
       child: Row(
@@ -20,7 +20,7 @@ class Footer extends StatelessWidget {
             data: Theme.of(context).copyWith(
               colorScheme: Theme.of(context)
                   .colorScheme
-                  .copyWith(onPrimary: AppTheme.textColor1),
+                  .copyWith(onPrimary: Colors.white),
             ),
             child: const QuickLinks(),
           ),

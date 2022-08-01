@@ -17,8 +17,6 @@ final _themeLight = ThemeData(
 final _themeDark = ThemeData(
   colorSchemeSeed: _baseColor,
   brightness: Brightness.dark,
-  scaffoldBackgroundColor: _backgroundColor,
-  cardColor: _backgroundColorLight,
   visualDensity: VisualDensity.adaptivePlatformDensity,
   elevatedButtonTheme: _elevatedButtonTheme,
 );
@@ -32,6 +30,4 @@ final _elevatedButtonTheme = ElevatedButtonThemeData(
   ),
 );
 
-final _baseColor = const Color(0xff279150).toMaterialColor();
-const _backgroundColor = Color(0xff111827);
-const _backgroundColorLight = Color(0xff151d2e);
+final _baseColor = const Color(0xff61c989).toMaterialColor();

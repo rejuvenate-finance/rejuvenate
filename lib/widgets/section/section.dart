@@ -113,7 +113,7 @@ class _SectionPageImageSection extends StatelessWidget {
             child: Icon(
               asset,
               size: max(MediaQuery.of(context).size.width / 3, 200),
-              color: Theme.of(context).colorScheme.primary,
+              color: AppTheme.dark.colorScheme.primary,
             ),
           ),
         ),

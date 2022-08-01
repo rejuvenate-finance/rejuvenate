@@ -18,9 +18,9 @@ class _RejuvenateAppState extends ConsumerState<RejuvenateApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: AppTheme.light.copyWith(
+      theme: AppTheme.dark.copyWith(
         textTheme: GoogleFonts.poppinsTextTheme(
-          AppTheme.light.textTheme,
+          AppTheme.dark.textTheme,
         ),
       ),
       title: widget.title,
