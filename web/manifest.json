@@ -1,11 +1,11 @@
 {
-  "name": "rejuvenate",
-  "short_name": "rejuvenate",
+  "name": "Rejuvenate Finance",
+  "short_name": "Rejuvenate",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#47b571",
   "theme_color": "#47b571",
-  "description": "Helping Investors through DeFi and Charity.",
+  "description": "Building the Ecosystem which brings new life to DeFi. For more security, safety and transparency!",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "icons": [
